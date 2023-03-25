@@ -4,7 +4,6 @@ import ast
 import math
 import random
 
-pyrogram.raw.types.ChatAdminRights
 import datetime 
 import psutil
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
@@ -34,7 +33,6 @@ from database.gfilters_mdb import (
 )
 import logging
 import time
-from pyrogram.errors import ChatAdminRequired
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)

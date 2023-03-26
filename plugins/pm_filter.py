@@ -64,7 +64,7 @@ SPELL_CHECK = {}
       #  text="**👋 Hello,\n\nPlease join my 'Updates Channel' and request again. 😇**",
     #    reply_markup=InlineKeyboardMarkup(btn),
       #  parse_mode=enums.ParseMode.MARKDOWN
-        )
+      #  )
     #    return
     
  #   if message.chat.id != SUPPORT_CHAT_ID:

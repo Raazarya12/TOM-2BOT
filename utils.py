@@ -82,6 +82,18 @@ async def is_subscribed(bot, query):
             return False
 
 
+async def mute_login(bot, query):
+    try:
+        user = await bot.get_chat_member(LOGIN_CHANNEL, query.from_user.id)
+    except UserNotParticipant:
+        pass
+    except Exception as e:
+        logger.exception(e)
+    else:
+        if user.status != enums.ChatMemberStatus.BANNED:
+            return True
+
+    return False
         
 async def is_login(bot, query):
     try:

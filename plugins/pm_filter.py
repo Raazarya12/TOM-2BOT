@@ -59,15 +59,14 @@ async def give_filter(client, message):
             ],[
                 InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
             ]]
-            reply_markup = InlineKeyboardMarkup(btn)
-            k = await message.reply_photo(
-                photo=random.choice(PICS),
-                caption=f"👋 Hello {message.from_user.mention},\n\nPlease join my 'Updates Channel' and request again. 😇",
-                reply_markup=reply_markup,
-                parse_mode=enums.ParseMode.MARKDOWN
+        await client.send_message(
+        chat_id=message.chat.id,
+        text="**👋 Hello {message.from_user.mention},\n\nPlease join my 'Updates Channel' and request again. 😇**",
+        reply_markup=InlineKeyboardMarkup(btn),
+        parse_mode=enums.ParseMode.MARKDOWN
         )
         return
-
+    
     if message.chat.id != SUPPORT_CHAT_ID:
         await global_filters(client, message)
     manual = await manual_filters(client, message)

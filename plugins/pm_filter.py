@@ -54,28 +54,35 @@ async def give_filter(client, message):
         except ChatAdminRequired:
             logger.error("Make sure Bot is admin in Forcesub channel")
             return
-        btn = [
-                [
-                    InlineKeyboardButton(
-                        "JOIN CHANNEL", url=invite_link.invite_link
-                    ),
-                    InlineKeyboardButton(
-                        text="NEW MOVIES",
-                        url="https://t.me/CKTalkies"
-                    ),
-                ]
-
-            ]
-
-        m=await message.reply_sticker("CAACAgUAAxkBAAINdmL9uWnC3ptj9YnTjFU4YGr5dtzwAAIEAAPBJDExieUdbguzyBAeBA")
-        await asyncio.sleep(1)
-        await m.delete()
-        await client.send_message(
-            chat_id=message.chat.id,
-            text="**PLEASE JOIN MY UPDATES CHANNEL TO USE TRY AGAIN BUTTON!**",
-            reply_markup=InlineKeyboardMarkup(btn),
-            parse_mode=enums.ParseMode.MARKDOWN
+            buttons = [[
+                InlineKeyboardButton("📢 Updates Channel 📢", url=invite_link.invite_link)
+            ],[
+                InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
+            ]]
+            reply_markup = InlineKeyboardMarkup(buttons)
+            k = await message.reply_photo(
+                photo=random.choice(PICS),
+                caption=f"👋 Hello {message.from_user.mention},\n\nPlease join my 'Updates Channel' and request again. 😇",
+                reply_markup=reply_markup,
+                parse_mode=enums.ParseMode.HTML
             )
+            await asyncio.sleep(300)
+            await k.delete()
+            try:
+                await message.delete()
+            except:
+                pass
+        else:
+            await auto_filter(client, message)
+    else:
+        k = await message.reply_text('Auto Filter Off! ❌')
+        await asyncio.sleep(5)
+        await k.delete()
+        try:
+            await message.delete()
+        except:
+            pass
+
 
         return
     if message.chat.id != SUPPORT_CHAT_ID:
@@ -1239,6 +1246,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "info":
         await query.answer(text=script.INFO, show_alert=True)
+        
+    elif query.data == "grp_checksub":
+        user = query.message.reply_to_message.from_user.id
+        if int(user) != 0 and query.from_user.id != int(user):
+            return await query.answer(f"Hello {query.from_user.first_name},\nThis Is Not For You!", show_alert=True)
+        if AUTH_CHANNEL and not await is_subscribed(client, query):
+            await query.answer(f"Hello {query.from_user.first_name},\nPlease join my updates channel and request again.", show_alert=True)
+            return
+        await query.answer(f"Hello {query.from_user.first_name},\nGood, Can You Request Now!", show_alert=True)
+        await query.message.delete()
+        try:
+            await query.message.reply_to_message.delete()
+        except:
+            pass
 
     elif query.data == "format":
         await query.answer(text=script.FORMAT, show_alert=True)

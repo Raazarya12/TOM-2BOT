@@ -136,9 +136,7 @@ async def start(client, message):
                     protect_content=msg.get('protect', False),
                     reply_markup=InlineKeyboardMarkup(
                         [
-                         [
-                          InlineKeyboardButton(f'{get_size(file.file_size)}', 'dupe')
-                        ],[
+                         [                         
                           InlineKeyboardButton("🌿 ɢʀᴏᴜᴘ", url='https://t.me/at3movies'),
                           InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/CKTalkies')
                          ]
@@ -156,8 +154,6 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton(f'{get_size(file.file_size)}', 'dupe')
-                        ],[
                           InlineKeyboardButton("🌿 ɢʀᴏᴜᴘ", url='https://t.me/at3movies'),
                           InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/CKTalkies')
                          ]
@@ -257,8 +253,6 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                          [
-                          InlineKeyboardButton(f'{get_size(file.file_size)}', 'dupe')
-                        ],[
                           InlineKeyboardButton("🌿 ɢʀᴏᴜᴘ", url='https://t.me/at3movies'),
                           InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/CKTalkies')
                          ]
@@ -310,8 +304,6 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
              [
-              InlineKeyboardButton(f'{get_size(file.file_size)}', 'dupe')
-            ],[
               InlineKeyboardButton("🌿 ɢʀᴏᴜᴘ", url='https://t.me/at3movies'),
               InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/CKTalkies')
              ]

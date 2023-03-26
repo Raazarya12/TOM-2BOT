@@ -46,27 +46,47 @@ SPELL_CHECK = {}
     #if kd == False:
         #await auto_filter(client, message)
 
+#@Client.on_message(filters.group & filters.text & filters.incoming)
+#async def give_filter(client, message):
+ #   if LOGIN_CHANNEL and not await is_login(client, message):
+ #       try:
+  #          invite_link = await client.create_chat_invite_link(int(LOGIN_CHANNEL))
+ #       except ChatAdminRequired:
+   #         logger.error("Make sure Bot is admin in Forcesub channel")
+     #       return
+   #     btn = [[
+     #           InlineKeyboardButton("📢 Updates Channel 📢", url=invite_link.invite_link)
+    #        ],[
+         #       InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
+   #         ]]
+   #     await client.send_message(
+    #    chat_id=message.chat.id,
+      #  text="**👋 Hello,\n\nPlease join my 'Updates Channel' and request again. 😇**",
+    #    reply_markup=InlineKeyboardMarkup(btn),
+      #  parse_mode=enums.ParseMode.MARKDOWN
+        )
+    #    return
+    
+ #   if message.chat.id != SUPPORT_CHAT_ID:
+  #      await global_filters(client, message)
+  # manual = await manual_filters(client, message)
+ #   if manual == False:
+   #     settings = await get_settings(message.chat.id)
+     #  try:
+    #        if settings['auto_ffilter']:
+       #         await auto_filter(client, message)
+    #    except KeyError:
+      #      grpid = await active_connection(str(message.from_user.id))
+      #      await save_group_settings(grpid, 'auto_ffilter', True)
+      #      settings = await get_settings(message.chat.id)
+       #     if settings['auto_ffilter']:
+      #          await auto_filter(client, message) 
+
+        
+               
+        
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
-    if LOGIN_CHANNEL and not await is_login(client, message):
-        try:
-            invite_link = await client.create_chat_invite_link(int(LOGIN_CHANNEL))
-        except ChatAdminRequired:
-            logger.error("Make sure Bot is admin in Forcesub channel")
-            return
-        btn = [[
-                InlineKeyboardButton("📢 Updates Channel 📢", url=invite_link.invite_link)
-            ],[
-                InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
-            ]]
-        await client.send_message(
-        chat_id=message.chat.id,
-        text="**👋 Hello {message.from_user.mention},\n\nPlease join my 'Updates Channel' and request again. 😇**",
-        reply_markup=InlineKeyboardMarkup(btn),
-        parse_mode=enums.ParseMode.MARKDOWN
-        )
-        return
-    
     if message.chat.id != SUPPORT_CHAT_ID:
         await global_filters(client, message)
     manual = await manual_filters(client, message)
@@ -82,6 +102,9 @@ async def give_filter(client, message):
             if settings['auto_ffilter']:
                 await auto_filter(client, message) 
 
+                
+                
+                
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pm_text(bot, message):
     content = message.text

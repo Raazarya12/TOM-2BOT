@@ -61,7 +61,7 @@ async def give_filter(client, message):
                     ),
                     InlineKeyboardButton(
                         text="NEW MOVIES",
-                        url="https://t.me/+cACZdXU2LH8xOGE1"
+                        url="https://t.me/CKTalkies"
                     ),
                 ]
 

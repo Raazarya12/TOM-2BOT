@@ -54,37 +54,30 @@ async def give_filter(client, message):
         except ChatAdminRequired:
             logger.error("Make sure Bot is admin in Forcesub channel")
             return
-            buttons = [[
-                InlineKeyboardButton("📢 Updates Channel 📢", url=invite_link.invite_link)
-            ],[
-                InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
-            ]]
-            reply_markup = InlineKeyboardMarkup(buttons)
-            k = await message.reply_photo(
-                photo=random.choice(PICS),
-                caption=f"👋 Hello {message.from_user.mention},\n\nPlease join my 'Updates Channel' and request again. 😇",
-                reply_markup=reply_markup,
-                parse_mode=enums.ParseMode.HTML
-            )
-            await asyncio.sleep(300)
-            await k.delete()
-            try:
-                await message.delete()
-            except:
-                pass
-        else:
-            await auto_filter(client, message)
-    else:
-        k = await message.reply_text('Auto Filter Off! ❌')
-        await asyncio.sleep(5)
-        await k.delete()
-        try:
-            await message.delete()
-        except:
-            pass
-
-
+        btn = [
+                [
+                    InlineKeyboardButton(
+                        "JOIN CHANNEL", url=invite_link.invite_link
+                    ),
+                    InlineKeyboardButton(
+                        text="NEW MOVIES",
+                        url="https://t.me/+cACZd"
+                    ),
+                ]
+                
+            ]
+        
+        m=await message.reply_sticker("CAACAgUAAxkBAAINdmL9uWnC3ptj9YnTjFU4YGr5dtzwAAIEAAPBJDExieUdbguzyBAeBA")
+        await asyncio.sleep(1)
+        await m.delete()
+        await client.send_message(
+        chat_id=message.chat.id,
+        text="**PLEASE JOIN MY UPDATES CHANNEL TO USE TRY AGAIN BUTTON!**",
+        reply_markup=InlineKeyboardMarkup(btn),
+        parse_mode=enums.ParseMode.MARKDOWN
+        )
         return
+
     if message.chat.id != SUPPORT_CHAT_ID:
         await global_filters(client, message)
     manual = await manual_filters(client, message)

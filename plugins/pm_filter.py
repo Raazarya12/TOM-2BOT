@@ -48,7 +48,7 @@ SPELL_CHECK = {}
 
 #@Client.on_message(filters.group & filters.text & filters.incoming)
 #async def give_filter(client, message):
- #   if LOGIN_CHANNEL and not await is_login(client, message):
+ #   if LOGIN_CHANNEL and not await mute_login(client, message):
  #       try:
   #          invite_link = await client.create_chat_invite_link(int(LOGIN_CHANNEL))
  #       except ChatAdminRequired:
@@ -87,20 +87,69 @@ SPELL_CHECK = {}
         
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
-    if message.chat.id != SUPPORT_CHAT_ID:
-        await global_filters(client, message)
-    manual = await manual_filters(client, message)
-    if manual == False:
-        settings = await get_settings(message.chat.id)
+    content = message.text
+    settings = await get_settings(message.chat.id)        
+    if settings["auto_ffilter"]:
+        userid = message.from_user.id if message.from_user else None
+        if not userid:
+            search = message.text
+            k = await message.reply(f"You'r anonymous admin! Sorry you can't get '{search}' from here.\nYou can get '{search}' from bot inline search.")
+            await asyncio.sleep(30)
+            await k.delete()
+            try:
+                await message.delete()
+            except:
+                pass
+            return
+
+        if LOGIN_CHANNEL and not await mute_login(client, message):
+            try:
+                invite_link = await client.create_chat_invite_link(int(LOGIN_CHANNEL))
+            except ChatAdminRequired:
+                logger.error("Make sure Bot is admin in Forcesub channel")
+                return
+            buttons = [[
+                InlineKeyboardButton("📢 Updates Channel 📢", url=invite_link.invite_link)
+            ],[
+                InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
+            ]]
+            reply_markup = InlineKeyboardMarkup(buttons)
+            k = await message.reply_photo(
+                photo=random.choice(PICS),
+                caption=f"👋 𝐇𝐞𝐥𝐥𝐨 {message.from_user.mention},\n\n{content} 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞..!!\n\n𝐏𝐥𝐞𝐚𝐬𝐞 𝐉𝐨𝐢𝐧 𝐌𝐲 '𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥' 𝐀𝐧𝐝 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐠𝐚𝐢𝐧. 😇",
+                reply_markup=reply_markup,
+                parse_mode=enums.ParseMode.HTML
+            )
+            await asyncio.sleep(300)
+            await k.delete()
+            try:
+                await message.delete()
+            except:
+                pass
+        else:
+            await auto_ffilter(client, message)
+    else:
+        k = await message.reply_text('Auto Filter Off! ❌')
+        await asyncio.sleep(5)
+        await k.delete()
         try:
-            if settings['auto_ffilter']:
-                await auto_filter(client, message)
-        except KeyError:
-            grpid = await active_connection(str(message.from_user.id))
-            await save_group_settings(grpid, 'auto_ffilter', True)
-            settings = await get_settings(message.chat.id)
-            if settings['auto_ffilter']:
-                await auto_filter(client, message) 
+            await message.delete()
+        except:
+            pass
+#    if message.chat.id != SUPPORT_CHAT_ID:
+#        await global_filters(client, message)
+#    manual = await manual_filters(client, message)
+#    if manual == False:
+#        settings = await get_settings(message.chat.id)
+#        try:
+#            if settings['auto_ffilter']:
+#                await auto_filter(client, message)
+#        except KeyError:
+#            grpid = await active_connection(str(message.from_user.id))
+#            await save_group_settings(grpid, 'auto_ffilter', True)
+#            settings = await get_settings(message.chat.id)
+#            if settings['auto_ffilter']:
+#                await auto_filter(client, message) 
 
                 
                 
@@ -1158,7 +1207,24 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer("Hᴇʀᴇ ᴀʀᴇ ᴛʜᴇ ᴏᴘᴛɪᴏɴs !")
         else:
             await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ sᴜғғɪᴄɪᴀɴᴛ ʀɪɢᴛs ᴛᴏ ᴅᴏ ᴛʜɪs !", show_alert=True)
-        
+
+elif query.data == "grp_checksub":
+        user = query.message.reply_to_message.from_user.id
+        if int(user) != 0 and query.from_user.id != int(user):
+            return await query.answer(f"Hello {query.from_user.first_name},\nThis Is Not For You!", show_alert=True)
+        if LOGIN_CHANNEL and not await mute_login(client, query):
+            await query.answer(f"Hello {query.from_user.first_name},\nPlease join my updates channel and request again.", show_alert=True)
+            return
+        await query.answer(f"Hello {query.from_user.first_name},\nGood, Can You Request Now!", show_alert=True)
+        await query.message.delete()
+        try:
+            await query.message.reply_to_message.delete()
+        except:
+            pass
+
+
+
+       
     elif query.data.startswith("unavailable"):
         ident, from_user = query.data.split("#")
         btn = [[

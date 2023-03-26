@@ -59,11 +59,11 @@ async def give_filter(client, message):
             ],[
                 InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")
             ]]
-            reply_markup = InlineKeyboardMarkup(buttons)
+            reply_markup = InlineKeyboardMarkup(btn)
             k = await message.reply_photo(
                 photo=random.choice(PICS),
                 caption=f"👋 Hello {message.from_user.mention},\n\nPlease join my 'Updates Channel' and request again. 😇",
-                reply_markup=reply_markup(btn),
+                reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.MARKDOWN
         )
         return

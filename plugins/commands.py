@@ -137,7 +137,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton("{get_size(file.file_size)}", url=f'http://t.me/TGxMULTIBOT?startgroup=true')
+                          InlineKeyboardButton(f'{get_size(file.file_size)}', 'dupe')
                         ],[
                           InlineKeyboardButton("🌿 ɢʀᴏᴜᴘ", url='https://t.me/at3movies'),
                           InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/CKTalkies')
@@ -156,7 +156,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton("{get_size(file.file_size)}", url=f'http://t.me/TGxMULTIBOT?startgroup=true')
+                          InlineKeyboardButton(f'{get_size(file.file_size)}', 'dupe')
                         ],[
                           InlineKeyboardButton("🌿 ɢʀᴏᴜᴘ", url='https://t.me/at3movies'),
                           InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/CKTalkies')
@@ -257,7 +257,7 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                          [
-                          InlineKeyboardButton("{get_size(file.file_size)}", url=f'http://t.me/TGxMULTIBOT?startgroup=true')
+                          InlineKeyboardButton(f'{get_size(file.file_size)}', 'dupe')
                         ],[
                           InlineKeyboardButton("🌿 ɢʀᴏᴜᴘ", url='https://t.me/at3movies'),
                           InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/CKTalkies')
@@ -310,7 +310,7 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
              [
-              InlineKeyboardButton("{get_size(file.file_size)}", url=f'http://t.me/TGxMULTIBOT?startgroup=true')
+              InlineKeyboardButton(f'{get_size(file.file_size)}', 'dupe')
             ],[
               InlineKeyboardButton("🌿 ɢʀᴏᴜᴘ", url='https://t.me/at3movies'),
               InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/CKTalkies')

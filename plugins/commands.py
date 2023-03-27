@@ -137,8 +137,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [                         
-                          InlineKeyboardButton("🌿 ɢʀᴏᴜᴘ", url='https://t.me/at3movies'),
-                          InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/CKTalkies')
+                          InlineKeyboardButton("❤️‍🔥 ᴍᴏᴠɪᴇs ❤️‍🔥", url='https://t.me/CKTalkies')                         
                          ]
                         ]
                     )
@@ -154,8 +153,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton("🌿 ɢʀᴏᴜᴘ", url='https://t.me/at3movies'),
-                          InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/CKTalkies')
+                          InlineKeyboardButton("❤️‍🔥 ᴍᴏᴠɪᴇs ❤️‍🔥", url='https://t.me/CKTalkies')   
                          ]
                         ]
                     )
@@ -253,8 +251,7 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                          [
-                          InlineKeyboardButton("🌿 ɢʀᴏᴜᴘ", url='https://t.me/at3movies'),
-                          InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/CKTalkies')
+                          InlineKeyboardButton("❤️‍🔥 ᴍᴏᴠɪᴇs ❤️‍🔥", url='https://t.me/CKTalkies')   
                          ]
                         ]
                     )
@@ -304,8 +301,7 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
              [
-              InlineKeyboardButton("🌿 ɢʀᴏᴜᴘ", url='https://t.me/at3movies'),
-              InlineKeyboardButton("🍂 ᴄʜᴀɴɴᴇʟ", url='https://t.me/CKTalkies')
+              InlineKeyboardButton("❤️‍🔥 ᴍᴏᴠɪᴇs ❤️‍🔥", url='https://t.me/CKTalkies')   
              ]
               ]
        )
@@ -814,7 +810,7 @@ async def shortlink(bot, message):
     await save_group_settings(grpid, 'is_shortlink', True)
     await reply.edit_text(f"<b>Successfully added shortlink API for {title}.\n\nCurrent Shortlink Website: <code>{shortlink_url}</code>\nCurrent API: <code>{api}</code></b>")
 
-@Client.on_message(filters.command("deletefiles") & filters.user(ADMINS))
+@Client.on_message(filters.command("deletepre") & filters.user(ADMINS))
 async def deletemultiplefiles(bot, message):
     btn = [[
             InlineKeyboardButton("PʀᴇDVD", callback_data="predvd"),

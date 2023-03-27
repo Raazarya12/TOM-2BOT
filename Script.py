@@ -421,9 +421,9 @@ coммand and υѕeѕ
 <b>⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️</b>"""
     
     NOR_TXT = """
-🎬 Qᴜᴇʀʏ : {}
+<b>🔖Tɪᴛʟᴇ : {}
 📁 Fɪʟᴇs : {}
 🎧 Aᴜᴅɪᴏ : Mᴜʟᴛɪ
 
-👤 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {}
-💭 Gʀᴏᴜᴘ : {}"""    
+📝 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {}
+📣 Gʀᴏᴜᴘ : {}</b>"""    

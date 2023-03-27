@@ -34,7 +34,6 @@ async def start(client, message):
         caption=script.STARTER_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
         await asyncio.sleep(20)
         await kd.delete()
-        await message.delete()
         
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)

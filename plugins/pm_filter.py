@@ -1954,7 +1954,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>🎪 ᴛɪᴛɪʟᴇ {search}\n\n┏ 🤴 ᴀsᴋᴇᴅ ʙʏ : {message.from_user.mention}\n┣ ⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : <a href='https://t.me/TGxMULTIBOT'>ᴛᴏᴍ</a>\n┗ 🍁 ᴄʜᴀɴɴᴇʟ : <a href='https://t.me/CKTalkies'>ᴄᴋᴛᴀʟᴋɪᴇs</a>\n\n★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ  <a href='https://t.me/MLZ_BOTZ'>ᴍʟᴢʙᴏᴛᴢ</a></b>"
+        cap = script.NOR_TXT.format(search, total_results, message.from_user.mention, message.from_user.mention)
     if imdb and imdb.get('poster'):
         try:
             if message.chat.id == SUPPORT_CHAT_ID:
@@ -2036,7 +2036,7 @@ async def auto_filter(client, msg, spoll=False):
                 )
             else:                
                 logger.exception(e)
-                fek = await message.reply_photo(photo=random.choice(NOR_IMG), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+                fek = await message.reply_photo(text=cap, reply_markup=InlineKeyboardMarkup(btn))
                 try:
                     if settings['auto_delete']:
                         await asyncio.sleep(IMDB_DLT_TIME)
@@ -2069,7 +2069,7 @@ async def auto_filter(client, msg, spoll=False):
                 )
             )
         else:
-            fuk = await message.reply_photo(photo=random.choice(NOR_IMG), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            fuk = await message.reply_photo(text=cap, reply_markup=InlineKeyboardMarkup(btn))
             try:
                 if settings['auto_delete']:
                     await asyncio.sleep(IMDB_DLT_TIME)

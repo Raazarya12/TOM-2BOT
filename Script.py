@@ -420,3 +420,10 @@ coммand and υѕeѕ
     CLOSE_TXT = """
 <b>⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️</b>"""
     
+    NOR_TXT = """
+🎬 Qᴜᴇʀʏ : {}
+📁 Fɪʟᴇs : {}
+🎧 Aᴜᴅɪᴏ : Mᴜʟᴛɪ
+
+👤 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {}
+💭 Gʀᴏᴜᴘ : {}"""    

@@ -3,7 +3,6 @@ import re
 import ast
 import math
 import random
-from datetime import datetime, timedelta
 import datetime 
 import psutil
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
@@ -70,7 +69,7 @@ async def give_filter(client, message):
             ]]
             reply_markup = InlineKeyboardMarkup(buttons)
             try:
-                await client.restrict_chat_member(message.chat.id, message.from_user.id, ChatPermissions(), datetime.now() + timedelta(minutes=5))
+                await client.restrict_chat_member(message.chat.id, message.from_user.id, ChatPermissions(), datetime.datetime.now() + datetime.timedelta(minutes=5))
             except:
                 pass
             k = await message.reply_photo(

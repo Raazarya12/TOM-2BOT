@@ -209,7 +209,7 @@ async def next_page(bot, query):
         if settings['auto_delete']:
             btn.insert(0, 
                 [
-                    InlineKeyboardButton(f'🗂 ꜰɪʟᴇs: {total_results}', 'dupe'),
+                    InlineKeyboardButton(f'🗂 ꜰɪʟᴇs: {total}', 'dupe'),
                     InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{search.replace(' ', '_')}#{key}"),
                     InlineKeyboardButton(f'🔮 ᴛɪᴘs', 'tips')
                 ]
@@ -218,7 +218,7 @@ async def next_page(bot, query):
         else:
             btn.insert(0, 
                 [
-                    InlineKeyboardButton(f'🗂 ꜰɪʟᴇs: {total_results}', 'dupe'),
+                    InlineKeyboardButton(f'🗂 ꜰɪʟᴇs: {total}', 'dupe'),
                     InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{search.replace(' ', '_')}#{key}"),
                     InlineKeyboardButton(f'🔮 ᴛɪᴘs', 'tips')
                 ]
@@ -231,7 +231,7 @@ async def next_page(bot, query):
         if settings['auto_delete']:
             btn.insert(0, 
                 [
-                    InlineKeyboardButton(f'🗂 ꜰɪʟᴇs: {total_results}', 'dupe'),
+                    InlineKeyboardButton(f'🗂 ꜰɪʟᴇs: {total}', 'dupe'),
                     InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{search.replace(' ', '_')}#{key}"),
                     InlineKeyboardButton(f'🔮 ᴛɪᴘs', 'tips')
                 ]
@@ -240,7 +240,7 @@ async def next_page(bot, query):
         else:
             btn.insert(0, 
                 [
-                    InlineKeyboardButton(f'🗂 ꜰɪʟᴇs: {total_results}', 'dupe'),
+                    InlineKeyboardButton(f'🗂 ꜰɪʟᴇs: {total}', 'dupe'),
                     InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{search.replace(' ', '_')}#{key}"),
                     InlineKeyboardButton(f'🔮 ᴛɪᴘs', 'tips')
                 ]

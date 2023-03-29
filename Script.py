@@ -411,11 +411,11 @@ coммand and υѕeѕ
 <b>🆓 ғʀᴇᴇ:</b> <code>{}</code> """
     
     OWNER_TXT = """
-<b>⍟───[ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ ]───⍟
+<b>⍟───[ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ ]───⍟</b>
     
-• ꜰᴜʟʟ ɴᴀᴍᴇ : || ᴀꜰsᴀʟ ʜᴀsʜɪᴍ ||
-• ᴜꜱᴇʀɴᴀᴍᴇ : @af_x_su
-• ɢɪᴛʜᴜʙ : <a href='https://github.com/CyberTG'>ᴄʏʙᴇʀ ᠰ ᴛɢ​</a></b>
+<b>• ꜰᴜʟʟ ɴᴀᴍᴇ :</b> || ᴀꜰsᴀʟ ʜᴀsʜɪᴍ ||
+<b>• ᴜꜱᴇʀɴᴀᴍᴇ : @af_x_su</b>
+<b>• ɢɪᴛʜᴜʙ : <a href='https://github.com/CyberTG'>ᴄʏʙᴇʀ ᠰ ᴛɢ​</a></b>
 """
     CLOSE_TXT = """
 <b>⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️</b>"""

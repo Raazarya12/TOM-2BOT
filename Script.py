@@ -413,9 +413,9 @@ coммand and υѕeѕ
     OWNER_TXT = """
 <b>⍟───[ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ ]───⍟
     
-• ꜰᴜʟʟ ɴᴀᴍᴇ : ᴀꜰsᴀʟ ʜᴀsʜɪᴍ
+• ꜰᴜʟʟ ɴᴀᴍᴇ : ||ᴀꜰsᴀʟ ʜᴀsʜɪᴍ||
 • ᴜꜱᴇʀɴᴀᴍᴇ : @af_x_su
-• ᴘᴇʀᴍᴀɴᴇɴᴛ ᴅᴍ ʟɪɴᴋ : <a href='https://t.me/crazyspiderr'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a></b>
+• ɢɪᴛʜᴜʙ : <a href='https://github.com/CyberTG'>ᴄʏʙᴇʀ ᠰ ᴛɢ​</a></b>
 """
     CLOSE_TXT = """
 <b>⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️</b>"""

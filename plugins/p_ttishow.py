@@ -5,7 +5,7 @@ import psutil
 from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
-from info import ADMINS, LOG_CHANNEL, BOT_START_TIME, SUPPORT_CHAT, MELCOW_NEW_USERS, MELCOW_VID, CHNL_LNK, GRP_LNK, NEWGRP
+from info import ADMINS, LOG_CHANNEL, BOT_START_TIME, SUPPORT_CHAT, MELCOW_NEW_USERS, MELCOW_VID, CHNL_LNK, GRP_LNK, NEWGRP, MAIN_CHANNEL, S_GROUP
 from database.users_chats_db import db
 from database.ia_filterdb import Media
 from utils import get_size, temp, get_settings, get_readable_time
@@ -45,7 +45,7 @@ async def save_group(bot, message):
             await bot.leave_chat(message.chat.id)
             return
         buttons = [[
-                    InlineKeyboardButton('📣 Uᴘᴅᴀᴛᴇs', url='https://t.me/CornersOfficial'),
+                    InlineKeyboardButton('📣 Uᴘᴅᴀᴛᴇs', url=MAIN_CHANNEL),
                     InlineKeyboardButton('❓ Hᴇʟᴘ', url=f"https://t.me/{temp.U_NAME}?start=help")
                   ]]
         reply_markup=InlineKeyboardMarkup(buttons)
@@ -67,7 +67,7 @@ async def save_group(bot, message):
                                                  caption=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
                                                  reply_markup=InlineKeyboardMarkup(
                                                                          [[
-                                                                             InlineKeyboardButton('🍁 sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ​ 🍁', url='https://t.me/Request_Corner1')
+                                                                             InlineKeyboardButton('🍁 sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ​ 🍁', url=S_GROUP)
                                                                         
                                                                         ]]
                                                  ),

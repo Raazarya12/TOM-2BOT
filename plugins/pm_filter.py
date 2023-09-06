@@ -382,7 +382,7 @@ async def advantage_spoll_choker(bot, query):
             if NO_RESULTS_MSG:
                 await bot.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, movie)))
             k = await query.message.edit(script.MVE_NT_FND)
-            await asyncio.sleep(10)
+            await asyncio.sleep(86400)
             await k.delete()
 
 #languages
@@ -2008,7 +2008,7 @@ async def auto_filter(client, msg, spoll=False):
                         thega=await message.reply_photo(
                             photo=random.choice(CLOSE_IMG),
                             caption=f"⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
-                        await asyncio.sleep(37)                   
+                        await asyncio.sleep(86400)                   
                         await thega.delete()                        
                 except KeyError:
                     grpid = await active_connection(str(message.from_user.id))
@@ -2020,7 +2020,7 @@ async def auto_filter(client, msg, spoll=False):
                         thega=await message.reply_photo(
                             photo=random.choice(CLOSE_IMG),
                             caption=f"⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
-                        await asyncio.sleep(37)                   
+                        await asyncio.sleep(86400)                   
                         await thega.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             if message.chat.id == SUPPORT_CHAT_ID:
@@ -2043,7 +2043,7 @@ async def auto_filter(client, msg, spoll=False):
                         thega=await message.reply_photo(
                             photo=random.choice(CLOSE_IMG),
                             caption=f"⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
-                        await asyncio.sleep(37)                   
+                        await asyncio.sleep(86400)                   
                         await thega.delete()
                 except KeyError:
                     grpid = await active_connection(str(message.from_user.id))
@@ -2055,7 +2055,7 @@ async def auto_filter(client, msg, spoll=False):
                         thega=await message.reply_photo(
                             photo=random.choice(CLOSE_IMG),
                             caption=f"⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
-                        await asyncio.sleep(37)                   
+                        await asyncio.sleep(86400)                   
                         await thega.delete()                         
         except Exception as e:
             if message.chat.id == SUPPORT_CHAT_ID:
@@ -2077,7 +2077,7 @@ async def auto_filter(client, msg, spoll=False):
                         thega=await message.reply_photo(
                             photo=random.choice(CLOSE_IMG),
                             caption=f"⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
-                        await asyncio.sleep(37)                   
+                        await asyncio.sleep(86400)                   
                         await thega.delete()
                 except KeyError:
                     grpid = await active_connection(str(message.from_user.id))
@@ -2089,7 +2089,7 @@ async def auto_filter(client, msg, spoll=False):
                         thega=await message.reply_photo(
                             photo=random.choice(CLOSE_IMG),
                             caption=f"⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
-                        await asyncio.sleep(37)                   
+                        await asyncio.sleep(86400)                   
                         await thega.delete()                 
     else:
         if message.chat.id == SUPPORT_CHAT_ID:
@@ -2110,7 +2110,7 @@ async def auto_filter(client, msg, spoll=False):
                     thega=await message.reply_photo(
                         photo=random.choice(CLOSE_IMG),
                         caption=f"⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
-                    await asyncio.sleep(37)                   
+                    await asyncio.sleep(86400)                   
                     await thega.delete()  
                     
             except KeyError:
@@ -2123,7 +2123,7 @@ async def auto_filter(client, msg, spoll=False):
                     thega=await message.reply_photo(
                         photo=random.choice(CLOSE_IMG),
                         caption=f"⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
-                    await asyncio.sleep(37)                   
+                    await asyncio.sleep(86400)                   
                     await thega.delete()
                                        
     if spoll:
@@ -2172,7 +2172,7 @@ async def advantage_spell_chok(client, msg):
             reply_markup=InlineKeyboardMarkup(button),
             reply_to_message_id=msg.id
         )
-        await asyncio.sleep(70)
+        await asyncio.sleep(86400)
         await k.delete()
         return
     movielist = [movie.get('title') for movie in movies]
@@ -2194,14 +2194,14 @@ async def advantage_spell_chok(client, msg):
     )
     try:
         if settings['auto_delete']:
-            await asyncio.sleep(70)
+            await asyncio.sleep(86400)
             await spell_check_del.delete()
     except KeyError:
             grpid = await active_connection(str(message.from_user.id))
             await save_group_settings(grpid, 'auto_delete', True)
             settings = await get_settings(message.chat.id)
             if settings['auto_delete']:
-                await asyncio.sleep(70)
+                await asyncio.sleep(86400)
                 await spell_check_del.delete()
 
 

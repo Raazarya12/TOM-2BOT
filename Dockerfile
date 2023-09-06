@@ -8,4 +8,4 @@ RUN cd /TOM-BOT
 RUN pip3 install -U pip && pip3 install -U -r requirements.txt
 WORKDIR /TOM-BOT
 COPY . .
-CMD ["/bin/bash", "/start.sh"]
+CMD ["python3", "bot.py"]

@@ -8,7 +8,7 @@ from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id, get_bad_files
 from database.users_chats_db import db
-from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT, CHNL_LNK, GRP_LNK, REQST_CHANNEL, SUPPORT_CHAT_ID, MAX_B_TN, VERIFY
+from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT, CHNL_LNK, GRP_LNK, REQST_CHANNEL, SUPPORT_CHAT_ID, MAX_B_TN, VERIFY, MAIN_CHANNEL, S_GROUP
 from utils import get_settings, get_size, is_subscribed, save_group_settings, temp, verify_user, check_token, check_verification, get_token
 from database.connections_mdb import active_connection
 from plugins.fsub import ForceSub
@@ -25,8 +25,8 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                   ],[
-                    InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/CornersOfficial'),
-                    InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ', url='https://t.me/Request_Corner1')
+                    InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/Latest_movies_freeOnNet'),
+                    InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ', url='https://t.me/Mix_Cinema_Box')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         kd = await message.reply_photo(
@@ -46,9 +46,6 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('〆 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 〆', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ​', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🎀💻 ᴅᴇᴠ​', callback_data='owner_info')
-            ],[      
             InlineKeyboardButton('🕯 ʜᴇʟᴘ 🕯', callback_data='help2'),
             InlineKeyboardButton('🍾 ᴀʙᴏᴜᴛ 🍾', callback_data='about')
             ],[
@@ -72,9 +69,6 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('〆 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 〆', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ​', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🎀💻 ᴅᴇᴠ​', callback_data='owner_info')
-            ],[      
             InlineKeyboardButton('🕯 ʜᴇʟᴘ 🕯', callback_data='help2'),
             InlineKeyboardButton('🍾 ᴀʙᴏᴜᴛ 🍾', callback_data='about')
             ],[
@@ -135,7 +129,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [                         
-                          InlineKeyboardButton("❤️‍🔥 ᴍᴏᴠɪᴇs ❤️‍🔥", url='https://t.me/Movies_Corner20')                         
+                          InlineKeyboardButton("❤️‍🔥 Updates ❤️‍🔥", url=MAIN_CHANNEL)                         
                          ]
                         ]
                     )
@@ -151,7 +145,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton("❤️‍🔥 ᴍᴏᴠɪᴇs ❤️‍🔥", url='https://t.me/Movies_Corner20')   
+                          InlineKeyboardButton("❤️‍🔥 Updates ❤️‍🔥", url=MAIN_CHANNEL)   
                          ]
                         ]
                     )
@@ -249,7 +243,7 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                          [
-                          InlineKeyboardButton("❤️‍🔥 ᴍᴏᴠɪᴇs ❤️‍🔥", url='https://t.me/Movies_Corner20')   
+                          InlineKeyboardButton("❤️‍🔥 Updates ❤️‍🔥", url=MAIN_CHANNEL)   
                          ]
                         ]
                     )
@@ -299,7 +293,7 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
              [
-              InlineKeyboardButton("❤️‍🔥 ᴍᴏᴠɪᴇs ❤️‍🔥", url='https://t.me/Movies_Corner20')   
+              InlineKeyboardButton("❤️‍🔥 Updates ❤️‍🔥", url=MAIN_CHANNEL)   
              ]
               ]
        )

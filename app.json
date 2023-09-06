@@ -15,8 +15,8 @@
       "index",
       "inline"
     ],
-    "website": "https://github.com/CyberTG/TOM-BOT",
-    "repository": "https://github.com/CyberTG/TOM-BOT",
+    "website": "https://github.com/Jkdeveloper01/TOM-2BOT",
+    "repository": "https://github.com/Jkdeveloper01/TOM-2BOT",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
@@ -36,7 +36,7 @@
         },
         "ADMINS": {
             "description": "Username or ID of Admin. Separate multiple Admins by space.",
-            "required": true
+            "required": false
         },
         "PICS": {
             "description": "Add some telegraph link of pictures .",
@@ -44,7 +44,7 @@
         },
         "LOG_CHANNEL": {
             "description": "Bot Logs,Give a channel id with -100xxxxxxx",
-            "required": true
+            "required": false
         },
         "AUTH_USERS": {
             "description": "Username or ID of users to give access of inline search. Separate multiple users by space.\nLeave it empty if you don't want to restrict bot usage.",
@@ -75,7 +75,7 @@
     "formation": {
         "worker": {
             "quantity": 1,
-            "size": "eco"
+            "size": "basic"
         }
     }
 }

@@ -34,9 +34,9 @@ CLOSE_IMG = (environ.get('CLOSE_IMG', 'https://telegra.ph/file/6e9dd701bac49632c
 JOIN_IMG = (environ.get('JOIN_IMG', 'https://telegra.ph/file/2718e562b65da275a7c56.jpg https://telegra.ph/file/a32c89628fa5444dc4a49.jpg https://telegra.ph/file/03bd753c7d9ca801ef5c3.jpg https://telegra.ph/file/ef824cc41a4795ddb1053.png https://telegra.ph/file/45c5df081bd4c631aca0d.jpg')).split()
                     
 # Admins, Log, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5554564210 1985196029 5069888600').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001572383457').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '5554564210').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_grp = environ.get('AUTH_GROUP')
 login_channel = environ.get('LOGIN_CHANNEL')
@@ -48,8 +48,8 @@ LOGIN_CHANNEL = int(login_channel) if login_channel and id_pattern.search(login_
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 
 # Custom Chats
-FILE_CHANNEL = int(environ.get('FILE_CHANNEL', '-1001589810188'))
-FILE_CHANNEL_LINK = environ.get('FILE_CHANNEL_LINK', 'https://t.me/+JTMdTj-50MY2NjBl')
+FILE_CHANNEL = int(environ.get('FILE_CHANNEL', '0'))
+FILE_CHANNEL_LINK = environ.get('FILE_CHANNEL_LINK', '0')
 
 #VALUES
 HRK_APP_NAME = environ.get('HRK_APP_NAME', 'mybots')
@@ -87,26 +87,26 @@ APPROVED = environ.get("APPROVED_WELCOME", "on").lower()
 VERIFY = bool(environ.get('VERIFY', False))
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'tnlink.in')
 SHORTLINK_API = environ.get('SHORTLINK_API', '826eb92e893f6fdb42920983bba04c409bdc0b5d')
-IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
+IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
 NO_RESULTS_MSG = bool(environ.get('NO_RESULTS_MSG', False))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "7")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "False")), False)
-S_GROUP = environ.get('S_GROUP',"https://t.me/Request_Corner1")
-MAIN_CHANNEL = environ.get('MAIN_CHANNEL',"https://t.me/CornersOfficial")
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/Request_Corner1')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/CornersOfficial')
+S_GROUP = environ.get('S_GROUP',"https://t.me/Mix_Cinema_Box")
+MAIN_CHANNEL = environ.get('MAIN_CHANNEL',"https://t.me/Latest_movies_freeOnNet")
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/Mix_Cinema_Box')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Latest_movies_freeOnNet')
 MSG_ALRT = environ.get('MSG_ALRT', 'Piracy Is Crime')
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', -1001801990402))
 FILE_CHANNEL = int(environ.get('FILE_CHANNEL', 0))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Request_Corner1')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
-IMDB = is_enabled((environ.get('IMDB', "False")), False)
+IMDB = is_enabled((environ.get('IMDB', "True")), False)
 AUTO_FFILTER = is_enabled((environ.get('AUTO_FFILTER', "True")), True)
-AUTO_DELETE = is_enabled((environ.get('AUTO_DELETE', "True")), True)
+AUTO_DELETE = is_enabled((environ.get('AUTO_DELETE', "False")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", f"{script.CAPTION}")
-BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", None)
+BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", f"{script.IMDB_TEMPLATE_TXT}")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
